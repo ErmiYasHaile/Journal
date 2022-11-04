@@ -23,6 +23,17 @@ db.on("disconnected", () => console.log("mongo disconnected"))
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
 
+
+// I        N       D       U       C       E       S
+// INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
+
+
+// NEW
+app.get('/journal/new',(req, res)=>{
+    res.render('new.ejs')
+    // res.send('NEW ROUTE IS WORKING')
+})
+
 // CREATE
 app.post('/journal', (req, res)=>{
     // res.send('RECiEVeD')
