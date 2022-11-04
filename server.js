@@ -28,6 +28,12 @@ app.use(express.urlencoded({extended: true}))
 // INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
 
 
+// INDEX
+app.get('/journal',(req, res)=>{
+    // res.send('WORKS FINE')
+    res.render('index.ejs')
+})
+
 // NEW
 app.get('/journal/new',(req, res)=>{
     res.render('new.ejs')
@@ -44,7 +50,7 @@ app.post('/journal', (req, res)=>{
     // res.send(req.body)
 })
  
-//
+
 
 
 
