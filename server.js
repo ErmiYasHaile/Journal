@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const Journal = require('./models/journal')
+
 
 require('dotenv').config()
 
@@ -24,10 +26,14 @@ app.use(express.urlencoded({extended: true}))
 // CREATE
 app.post('/journal', (req, res)=>{
     // res.send('RECiEVeD')
-    res.send(req.body)
+
+    Journal.create(req.body, (error, CreatedJournal)=>{
+        res.send(CreatedJournal);
+     })
+    // res.send(req.body)
 })
-
-
+ 
+//
 
 
 
