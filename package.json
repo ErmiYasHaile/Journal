@@ -1,0 +1,25 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "An app that will help user documentng their life story.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErmiYasHaile/Journal.git"
+  },
+  "author": "Ermiyas H.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErmiYasHaile/Journal/issues"
+  },
+  "homepage": "https://github.com/ErmiYasHaile/Journal#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
