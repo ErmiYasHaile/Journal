@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Journal list</h1>
+    <ul>
+        <% journal.forEach(journal =>{ %> 
+            <li> <%=journal.title; %> </li>
+        <% }) %> 
+    </ul>
 </body>
 </html>

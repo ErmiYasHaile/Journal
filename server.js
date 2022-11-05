@@ -30,8 +30,11 @@ app.use(express.urlencoded({extended: true}))
 
 // INDEX
 app.get('/journal',(req, res)=>{
+    Journal.find({},(error, alljournallist)=>{    
+    res.render('index.ejs', {
+        journal: alljournallist})
+    })
     // res.send('WORKS FINE')
-    res.render('index.ejs')
 })
 
 // NEW
