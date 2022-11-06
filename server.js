@@ -40,6 +40,10 @@ app.get("/journal/new", (req, res) => {
   // res.send('NEW ROUTE IS WORKING')
 });
 
+// DELETE
+app.get("/journal/:id",(req, res)=>{
+    res.send("Delete works")
+})
 // CREATE
 app.post("/journal", (req, res) => {
   // res.send('RECiEVeD')

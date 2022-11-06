@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
     <title>Index</title>
   </head>
   <body>
     <nav>
-      <a href="/journal/new">Add Journal</a>
+      <a href="/journal/new">
+       <button>Add Journal</button></a>
     </nav>
     <h1>Journal list</h1>
     <ul>
@@ -16,6 +18,10 @@
       <li>
         <a href="/journal/<%=journal._id%>">
             <%=journal.title %></a>
+            <form>
+              <button type="submit">Delete</button>
+              <button type="submit">Edit</button>
+            </form>
       </li>
       <% }) %>
     </ul>
