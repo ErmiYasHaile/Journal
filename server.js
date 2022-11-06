@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const methodOverride = require("method-override")
 const Journal = require("./models/journal");
 
 require("dotenv").config();
@@ -20,7 +21,7 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
-
+app.use(methodOverride("_method"))
 // I        N       D       U       C       E       S
 // INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
 
@@ -41,8 +42,13 @@ app.get("/journal/new", (req, res) => {
 });
 
 // DELETE
-app.get("/journal/:id",(req, res)=>{
-    res.send("Delete works")
+app.delete("/journal/:id",(req, res)=>{
+    // res.send("Delete works")
+    Journal.findByIdAndRemove(req.params.id, (error,deletedjournal)=>{
+        console.log(deletedjournal)
+        res.redirect('/journal')
+    })
+
 })
 // CREATE
 app.post("/journal", (req, res) => {

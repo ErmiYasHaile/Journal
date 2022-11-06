@@ -18,9 +18,8 @@
       <li>
         <a href="/journal/<%=journal._id%>">
             <%=journal.title %></a>
-            <form>
+            <form action="/journal/<%= journal._id %>?_method=DELETE" method="POST">
               <button type="submit">Delete</button>
-              <button type="submit">Edit</button>
             </form>
       </li>
       <% }) %>
