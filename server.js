@@ -48,12 +48,19 @@ app.post('/journal', (req, res)=>{
     // res.send('RECiEVeD')
 
     Journal.create(req.body, (error, CreatedJournal)=>{
-        res.send(CreatedJournal);
+        res.redirect('/journal')
+        // res.send(CreatedJournal);
      })
     // res.send(req.body)
 })
  
-
+// SHOW
+app.get("/journal/:id",(req, res)=>{
+    Journal.findById(req.params.id,(error, foundedJournal)=>{
+        res.send(foundedJournal)
+    })
+    // res.send("Works, SHOW")
+})
 
 
 

@@ -7,10 +7,15 @@
     <title>Index</title>
 </head>
 <body>
+    <nav>
+        <a href="/journal/new">Add Journal</a>
+    </nav>
     <h1>Journal list</h1>
     <ul>
         <% journal.forEach(journal =>{ %> 
-            <li> <%=journal.title; %> </li>
+            <li> 
+                <a href="/journal/<%=journal._id  %>"><%=journal.title %></a>
+            </li>
         <% }) %> 
     </ul>
 </body>
