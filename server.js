@@ -52,8 +52,9 @@ app.post("/journal", (req, res) => {
 
 // SHOW
 app.get("/journal/:id", (req, res) => {
-  Journal.findById(req.params.id, (error, foundedJournal) => {
-    res.send(foundedJournal);
+  Journal.findById(req.params.id, (error, foundJournal) => {
+    // res.send(foundJournal);
+    res.render("show.ejs", {journal: foundJournal})
   });
   // res.send("Works, SHOW")
 });
